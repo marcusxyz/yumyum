@@ -1,29 +1,37 @@
 import styled from 'styled-components';
 import { Link } from '@gatsbyjs/reach-router';
-import Hero from '.';
+import { device } from '../MediaQueries';
 
 export const HeroContainer = styled.section`
   background-color: var(--tan);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @media ${device.tablet} {
+    display: flex;
+    flex-direction: row;
+  }
 `;
 
 export const HeroButton = styled.div`
-  display: inline-block;
   background-image: ${(props) => `url(${props.img})`};
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  padding: 7rem;
+  padding: 4rem;
 
   font-size: var(--h1);
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
+
+  @media ${device.tablet} {
+    padding: 7rem;
+  }
 `;
 
 export const HeroContent = styled(Link)`
-  width: 50%;
-  height: 80vh;
+  width: 100%;
+  height: 60vh;
   background-image: ${(props) => `url(${props.img})`};
   background-size: cover;
   background-position: ${(props) => `${props.position}`};
@@ -34,5 +42,10 @@ export const HeroContent = styled(Link)`
 
   &:hover ${HeroButton} {
     opacity: 0;
+  }
+
+  @media ${device.tablet} {
+    width: 100%;
+    height: 80vh;
   }
 `;

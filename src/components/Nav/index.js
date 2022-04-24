@@ -12,9 +12,9 @@ const Nav = () => {
           </Link>
         </NavLogo>
         <NavLinks>
-          <Link to='#'>Menu</Link>
-          <Link to='#'>Our Story</Link>
-          <Link to='#'>Find us</Link>
+          <Link to='/menu'>Menu</Link>
+          <Link to='/our-story'>Our Story</Link>
+          <Link to='/find-us'>Find us</Link>
         </NavLinks>
       </NavContent>
     </NavStyled>
