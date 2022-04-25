@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from '@gatsbyjs/reach-router';
-import { NavStyled, NavContent, NavLogo, NavLinks } from './styles';
+import React from "react";
+import { Link } from "@reach/router";
+import { NavStyled, NavContent, NavLogo, NavLinks } from "./styles";
 
 const Nav = () => {
   return (
@@ -20,5 +20,5 @@ const Nav = () => {
     </NavStyled>
   );
 };
-
+console.log(NavLinks);
 export default Nav;

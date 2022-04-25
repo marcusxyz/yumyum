@@ -1,16 +1,24 @@
-import React from 'react';
-import Nav from './components/Nav';
-import Hero from './components/Hero';
-import MarqueeScroller from './components/MarqueeScroller';
-import './App.css';
+import React from "react";
+import { Router } from "@reach/router";
+import Nav from "./components/Nav";
+
+import Home from "./pages/Home";
+import Menu from "./pages/Menu";
+import OurStory from "./pages/OurStory";
+import FindUs from "./pages/FindUs";
+
+import "./App.css";
 
 const App = () => {
   return (
     <div className='App'>
       <Nav />
-      <Hero />
-      <MarqueeScroller />
-      <h1>Hello world</h1>
+      <Router>
+        <Home path='/' />
+        <Menu path='/menu'>;</Menu>
+        <OurStory path='/our-story'></OurStory>
+        <FindUs path='/find-us'></FindUs>
+      </Router>
     </div>
   );
 };
