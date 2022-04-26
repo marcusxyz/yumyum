@@ -7,20 +7,22 @@ const Hero = () => {
 
   React.useEffect(() => {
     client
-      .getEntry({
+      .getEntries({
         content_type: 'indexHero',
-        limit: 1,
+        'sys.id': '1GvFooGGo7jWjCWXKCigTb',
       })
-      .then((entry) => {
-        // console.log(entry);
-        setIndexHero(entry.fields);
+      .then((entries) => {
+        setIndexHero(entries.items[0].fields);
+        // console.log(entries.items[0].fields);
       });
   }, []);
 
+  // Change content on left div
   const linkTitleLeft = indexHero && indexHero.leftLinkTitle;
   const leftUrl = indexHero && indexHero.urlLeft;
   const imageLeft = indexHero && indexHero.leftImage.fields.file.url;
 
+  // Change content on right div
   const linkTitleRight = indexHero && indexHero.rightLinkTitle;
   const rightUrl = indexHero && indexHero.urlRight;
   const imageRight = indexHero && indexHero.rightImage.fields.file.url;
