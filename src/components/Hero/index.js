@@ -12,24 +12,26 @@ const Hero = () => {
         limit: 1,
       })
       .then((entry) => {
+        // console.log(entry);
         setIndexHero(entry.fields);
-        console.log(entry.fields.leftImage.fields.file.url);
-        console.log(entry.fields.urlRight);
       });
   }, []);
+
+  const linkTitleLeft = indexHero && indexHero.leftLinkTitle;
+  const leftUrl = indexHero && indexHero.urlLeft;
+  const imageLeft = indexHero && indexHero.leftImage.fields.file.url;
+
+  const linkTitleRight = indexHero && indexHero.rightLinkTitle;
+  const rightUrl = indexHero && indexHero.urlRight;
+  const imageRight = indexHero && indexHero.rightImage.fields.file.url;
+
   return (
     <HeroContainer>
-      <HeroContent
-        to='/find-us'
-        img={indexHero && indexHero.leftImage.fields.file.url}
-        position='center'
-      >
-        <HeroButton img='images/blob.svg'>
-          {indexHero && indexHero.leftLinkTitle}
-        </HeroButton>
+      <HeroContent to={leftUrl || '/'} img={imageLeft} position='center'>
+        <HeroButton img='images/blob.svg'>{linkTitleLeft}</HeroButton>
       </HeroContent>
-      <HeroContent to='/menu' img='/images/see-menu.png' position='bottom'>
-        <HeroButton img='images/blob.svg'>See menu</HeroButton>
+      <HeroContent to={rightUrl || '/'} img={imageRight} position='bottom'>
+        <HeroButton img='images/blob.svg'>{linkTitleRight}</HeroButton>
       </HeroContent>
     </HeroContainer>
   );
