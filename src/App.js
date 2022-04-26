@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router } from '@reach/router';
+import { Router } from '@gatsbyjs/reach-router';
 import Nav from './components/Nav';
 
 import Home from './pages/Home';
@@ -14,10 +14,10 @@ const App = () => {
     <div className='App'>
       <Nav />
       <Router>
-        <Home path='/' />
-        <Menu path='/menu'>;</Menu>
-        <OurStory path='/our-story'></OurStory>
-        <FindUs path='/find-us'></FindUs>
+        <Home path='/'></Home>
+        <Menu exact path='/menu'></Menu>
+        <OurStory exact path='/our-story'></OurStory>
+        <FindUs exact path='/find-us'></FindUs>
       </Router>
     </div>
   );
