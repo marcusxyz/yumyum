@@ -19,6 +19,10 @@ export const MenuContainer = styled.section`
   }
 `;
 
+export const SectionTitleWrapper = styled.div`
+  width: 100%;
+`;
+
 export const SectionTitle = styled.h1`
   font-size: var(--h2);
   margin-bottom: 2rem;
@@ -26,6 +30,11 @@ export const SectionTitle = styled.h1`
   @media ${device.tablet} {
     font-size: var(--h1);
   }
+`;
+
+export const SectionSubtitle = styled.p`
+  font-size: var(--p-large);
+  font-weight: 500;
 `;
 
 export const MenuContentContainer = styled.div`

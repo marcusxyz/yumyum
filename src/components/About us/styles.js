@@ -29,9 +29,9 @@ export const AboutImageWrapper = styled.div`
 
 export const AboutImage = styled.div`
   width: 100%;
-  height: 60vw;
   background-image: ${(props) => `url(${props.img})`};
   background-size: cover;
+  background-position: center right;
   background-color: var(--red);
 
   @media ${device.tablet} {

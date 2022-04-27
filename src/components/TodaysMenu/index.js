@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   MenuContainer,
   MenuContent,
@@ -10,33 +10,44 @@ import {
   MenuContentContainer,
   MenuButtonContainer,
   SectionTitle,
+  SectionSubtitle,
+  SectionTitleWrapper,
 } from './styles';
-// import client from '../../contentful';
+import client from '../../contentful';
 
 const TodaysMenu = () => {
+  const [menuItems, setMenuItems] = useState(null);
+
+  React.useEffect(() => {
+    client
+      .getEntries({
+        content_type: 'todaysMenu',
+      })
+      .then((entries) => {
+        setMenuItems(entries.items);
+        console.log(entries.items);
+        console.log(entries.fields.MenuTitle);
+      });
+  }, []);
+
   return (
     <MenuContainer>
-      <SectionTitle>Todays Lunch</SectionTitle>
+      <SectionTitleWrapper>
+        <SectionTitle>Todays Lunch</SectionTitle>
+        <SectionSubtitle>11:30 – 13:00</SectionSubtitle>
+      </SectionTitleWrapper>
       <MenuContentContainer>
-        <MenuContent>
-          <MenuCategory>Meat</MenuCategory>
-          <MenuPrice>119 kr</MenuPrice>
-          <MenuTitle>Spicy Ramen</MenuTitle>
-          <MenuDescription>
-            Swedish pork side / Swedish chicken, spring onion, leek, salted
-            tomato, bean sprouts, nori, eggs and katsuobushi
-          </MenuDescription>
-        </MenuContent>
-
-        <MenuContent>
-          <MenuCategory>Veg</MenuCategory>
-          <MenuPrice>109 kr</MenuPrice>
-          <MenuTitle>Roasted Garlic Ramen</MenuTitle>
-          <MenuDescription>
-            Smoked tofu, pak choi, bean sprouts, spring onion, salted tomato,
-            leek, nori, celeriac, enoki, roasted garlic
-          </MenuDescription>
-        </MenuContent>
+        {menuItems &&
+          menuItems.map((menuItem, i) => {
+            return (
+              <MenuContent key={i}>
+                <MenuCategory>{menuItem.fields.category}</MenuCategory>
+                <MenuPrice>{menuItem.fields.price}</MenuPrice>
+                <MenuTitle>{menuItem.fields.name}</MenuTitle>
+                <MenuDescription>{menuItem.fields.ingredients}</MenuDescription>
+              </MenuContent>
+            );
+          })}
       </MenuContentContainer>
       <MenuButtonContainer>
         <MenuButton to='/menu'>See menu</MenuButton>
