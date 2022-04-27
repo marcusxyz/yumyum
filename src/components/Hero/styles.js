@@ -41,7 +41,9 @@ export const HeroContent = styled(Link)`
   justify-content: center;
 
   &:hover ${HeroButton} {
-    opacity: 0;
+    /* opacity: 0; */
+    background-image: url('images/blob-hover.svg');
+    background-size: contain;
   }
 
   @media ${device.tablet} {
