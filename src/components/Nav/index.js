@@ -14,7 +14,7 @@ const Nav = () => {
       })
       .then((entries) => {
         setNav(entries.items[0].fields);
-        console.log(entries.items[0].fields);
+        // console.log(entries.items[0].fields);
       });
   }, []);
 
