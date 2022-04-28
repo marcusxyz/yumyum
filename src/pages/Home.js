@@ -6,6 +6,7 @@ import TodaysMenu from '../components/TodaysMenu';
 import Footer from '../components/Footer';
 
 const Home = () => {
+  document.title = 'YUM YUM | Ramen bar';
   return (
     <div>
       <Hero />

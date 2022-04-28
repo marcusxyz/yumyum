@@ -4,7 +4,7 @@ import { device } from '../MediaQueries';
 
 export const FooterContainer = styled.section`
   background-color: var(--red);
-  padding: 4rem 1rem 2rem 1rem;
+  padding: 6rem 1rem 2rem 1rem;
 
   @media ${device.tablet} {
     padding: 8rem 2.5rem 2rem 2.5rem;
@@ -14,7 +14,7 @@ export const FooterContainer = styled.section`
 export const FooterContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
   color: var(--light-tan);
 
   @media ${device.tablet} {
@@ -49,6 +49,16 @@ export const DelieveryList = styled.ul`
 export const DelieveryItems = styled.a`
   font-size: var(--h4);
   color: var(--light-tan);
+  border-bottom: 2px dashed var(--light-tan);
+  margin: 0 auto;
+
+  @media ${device.tablet} {
+    margin: 0;
+  }
+
+  &:hover {
+    border-bottom: 2px solid var(--light-tan);
+  }
 `;
 
 export const Logo = styled.img`

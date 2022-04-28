@@ -25,8 +25,6 @@ const Nav = () => {
   const firstUrl = nav && nav.firstLinkUrl;
   const secondLinkTitle = nav && nav.secondLinkTitle;
   const secondUrl = nav && nav.secondLinkUrl;
-  const thirdLinkTitle = nav && nav.thirdLinkTitle;
-  const thirdUrl = nav && nav.thirdLinkUrl;
 
   return (
     <NavStyled>
@@ -39,7 +37,6 @@ const Nav = () => {
         <NavLinks>
           <Link to={firstUrl || '/'}>{firstLinkTitle}</Link>
           <Link to={secondUrl || '/'}>{secondLinkTitle}</Link>
-          <Link to={thirdUrl || '/'}>{thirdLinkTitle}</Link>
         </NavLinks>
       </NavContent>
     </NavStyled>

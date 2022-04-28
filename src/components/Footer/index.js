@@ -17,8 +17,13 @@ const Footer = () => {
       <FooterContent>
         <Telephone src='images/tel.svg'></Telephone>
         <DelieveryList>
-          <DelieveryItems href='#'>Foodora</DelieveryItems>
-          <DelieveryItems href='#'>Uber Eats</DelieveryItems>
+          <DelieveryItems href='https://www.foodora.se/en/'>
+            Foodora
+          </DelieveryItems>
+          <DelieveryItems href='https://www.ubereats.com/se'>
+            Uber Eats
+          </DelieveryItems>
+          <DelieveryItems href='https://wolt.com/en/swe'>Wolt</DelieveryItems>
         </DelieveryList>
         <Logo src='images/logo-inverted.svg' />
         <ContactList>
