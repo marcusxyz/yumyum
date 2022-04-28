@@ -76,7 +76,7 @@ export const AboutText = styled.p`
   line-height: 1.5;
   font-size: var(--p-large);
 
-  @media ${device.tablet} {
+  @media ${device.laptopL} {
     font-size: var(--p-large);
     text-align: left;
     columns: 2;

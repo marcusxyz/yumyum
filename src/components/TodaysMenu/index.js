@@ -25,8 +25,7 @@ const TodaysMenu = () => {
       })
       .then((entries) => {
         setMenuItems(entries.items);
-        console.log(entries.items);
-        console.log(entries.fields.MenuTitle);
+        // console.log(entries.items);
       });
   }, []);
 
