@@ -78,3 +78,16 @@ export const ContactList = styled.div`
 export const ContactItems = styled.p`
   font-size: var(--p);
 `;
+
+export const ContactLink = styled.a`
+  font-family: 'Roboto Mono', monospace;
+  font-size: var(--p);
+  font-weight: normal;
+  text-transform: none;
+  color: var(--light-tan);
+  border-bottom: 1px dashed var(--light-tan);
+
+  &:hover {
+    border-bottom: 1px solid var(--light-tan);
+  }
+`;

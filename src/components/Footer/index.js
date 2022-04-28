@@ -8,6 +8,7 @@ import {
   Logo,
   ContactList,
   ContactItems,
+  ContactLink,
 } from './styles';
 
 const Footer = () => {
@@ -22,7 +23,12 @@ const Footer = () => {
         <Logo src='images/logo-inverted.svg' />
         <ContactList>
           <ContactItems>Built with React + Contentful</ContactItems>
-          <ContactItems>Design & development by Marcus</ContactItems>
+          <ContactItems>
+            Design & development by{' '}
+            <ContactLink href='https://github.com/marcusxyz'>
+              Marcus
+            </ContactLink>
+          </ContactItems>
         </ContactList>
       </FooterContent>
     </FooterContainer>
