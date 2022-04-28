@@ -30,7 +30,7 @@ const Footer = () => {
           <ContactItems>Built with React + Contentful</ContactItems>
           <ContactItems>
             Design & development by{' '}
-            <ContactLink href='https://github.com/marcusxyz'>
+            <ContactLink href='https://marcushagerstrand.com/'>
               Marcus
             </ContactLink>
           </ContactItems>
