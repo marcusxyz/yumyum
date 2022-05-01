@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div className='App'>
       <Nav />
-      <Router>
+      <Router primary={false}>
         <Home path='/'></Home>
         <Menu exact path='/menu'></Menu>
         <OurStory exact path='/our-story'></OurStory>
