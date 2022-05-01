@@ -7,10 +7,14 @@ export const HoursContainer = styled.section`
 `;
 
 export const HoursWrapper = styled.div`
-  padding: 8rem;
+  padding: 4rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 4rem;
+
+  @media ${device.tablet} {
+    padding: 8rem;
+  }
 `;
 
 export const SectionTitle = styled.h2`
