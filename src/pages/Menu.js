@@ -1,10 +1,15 @@
 import React from 'react';
+import TodaysMenu from '../components/TodaysMenu';
+import MenuItems from '../components/MenuItems';
+import Footer from '../components/Footer';
 
 const Menu = () => {
   document.title = 'YUM YUM | Menu';
   return (
     <div>
-      <h1>This is the menu page</h1>
+      <TodaysMenu />
+      <MenuItems />
+      <Footer />
     </div>
   );
 };

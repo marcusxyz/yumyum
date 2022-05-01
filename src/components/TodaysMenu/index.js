@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import {
-  MenuContainer,
-  MenuContent,
-  MenuCategory,
-  MenuPrice,
-  MenuTitle,
-  MenuDescription,
-  MenuButton,
-  MenuContentContainer,
-  MenuButtonContainer,
+  LunchContainer,
+  LunchContent,
+  LunchCategory,
+  LunchPrice,
+  LunchTitle,
+  LunchDescription,
+  LunchContentContainer,
   SectionTitle,
   SectionSubtitle,
   SectionTitleWrapper,
@@ -16,7 +14,7 @@ import {
 import client from '../../contentful';
 
 const TodaysMenu = () => {
-  const [menuItems, setMenuItems] = useState(null);
+  const [lunchItems, setLunchItems] = useState(null);
 
   React.useEffect(() => {
     client
@@ -24,34 +22,33 @@ const TodaysMenu = () => {
         content_type: 'todaysMenu',
       })
       .then((entries) => {
-        setMenuItems(entries.items);
+        setLunchItems(entries.items);
         // console.log(entries.items);
       });
   }, []);
 
   return (
-    <MenuContainer>
+    <LunchContainer>
       <SectionTitleWrapper>
         <SectionTitle>Todays Lunch</SectionTitle>
         <SectionSubtitle>11:30 – 13:00</SectionSubtitle>
       </SectionTitleWrapper>
-      <MenuContentContainer>
-        {menuItems &&
-          menuItems.map((menuItem, i) => {
+      <LunchContentContainer>
+        {lunchItems &&
+          lunchItems.map((lunchItem, i) => {
             return (
-              <MenuContent key={i}>
-                <MenuCategory>{menuItem.fields.category}</MenuCategory>
-                <MenuPrice>{menuItem.fields.price}</MenuPrice>
-                <MenuTitle>{menuItem.fields.name}</MenuTitle>
-                <MenuDescription>{menuItem.fields.ingredients}</MenuDescription>
-              </MenuContent>
+              <LunchContent key={i}>
+                <LunchCategory>{lunchItem.fields.category}</LunchCategory>
+                <LunchPrice>{lunchItem.fields.price}</LunchPrice>
+                <LunchTitle>{lunchItem.fields.name}</LunchTitle>
+                <LunchDescription>
+                  {lunchItem.fields.ingredients}
+                </LunchDescription>
+              </LunchContent>
             );
           })}
-      </MenuContentContainer>
-      <MenuButtonContainer>
-        <MenuButton to='/menu'>See menu</MenuButton>
-      </MenuButtonContainer>
-    </MenuContainer>
+      </LunchContentContainer>
+    </LunchContainer>
   );
 };
 

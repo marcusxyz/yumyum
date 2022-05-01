@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { Link } from '@gatsbyjs/reach-router';
 import { device } from '../MediaQueries';
 
-export const LunchContainer = styled.section`
-  background-color: var(--pink);
+export const MenuContainer = styled.section`
+  background-color: ${(props) => `var(--${props.color})`};
   color: var(--red);
   padding: 6rem 1rem;
   display: flex;
@@ -32,12 +31,7 @@ export const SectionTitle = styled.h1`
   }
 `;
 
-export const SectionSubtitle = styled.p`
-  font-size: var(--p-large);
-  font-weight: 500;
-`;
-
-export const LunchContentContainer = styled.div`
+export const MenuContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -46,56 +40,42 @@ export const LunchContentContainer = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-bottom: 2rem;
   }
 `;
 
-export const LunchContent = styled.div`
+export const MenuContent = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  @media ${device.tablet} {
+    width: calc(50% - 2rem);
+    margin-bottom: 4rem;
+  }
 `;
 
-export const LunchCategory = styled.h3`
+export const MenuTitle = styled.h3`
   font-size: var(--h3);
   margin: 0;
 `;
 
-export const LunchPrice = styled.p`
+export const MenuPrice = styled.p`
   font-size: var(--p-large);
   font-weight: 500;
   font-style: italic;
 `;
 
-export const LunchTitle = styled.p`
-  font-size: var(--p-large);
-  font-weight: 500;
-`;
-
-export const LunchDescription = styled.p`
+export const MenuDescription = styled.p`
   font-size: var(--p);
   font-weight: 500;
   padding: 0 1rem;
 
   @media ${device.tablet} {
     padding: 0 4rem;
-  }
-`;
-
-export const MenuButtonContainer = styled.div`
-  width: 100%;
-`;
-
-export const MenuButton = styled(Link)`
-  display: inline;
-  font-size: var(--h3);
-  padding-bottom: 0.25rem;
-  border-bottom: 0.25rem dashed var(--red);
-  transition: 0.2s;
-
-  &:hover {
-    border-bottom: 0.25rem solid var(--red);
   }
 `;

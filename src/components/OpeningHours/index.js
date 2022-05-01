@@ -20,7 +20,7 @@ const OpeningHours = () => {
       })
       .then((entries) => {
         setHours(entries.items);
-        console.log(entries.items);
+        // console.log(entries.items);
       });
   }, []);
 
