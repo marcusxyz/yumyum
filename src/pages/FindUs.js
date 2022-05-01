@@ -1,9 +1,10 @@
 import React from 'react';
+import Map from '../components/Map';
 const FindUs = () => {
   document.title = 'YUM YUM | Find Us';
   return (
     <div>
-      <h1>This is the find us page</h1>
+      <Map />
     </div>
   );
 };
