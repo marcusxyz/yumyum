@@ -7,7 +7,7 @@ export const MapWrapper = styled.section`
   color: var(--red);
 
   @media ${device.tablet} {
-    padding: 8rem;
+    padding: 10rem;
   }
 
   display: flex;
