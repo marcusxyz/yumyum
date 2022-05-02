@@ -13,7 +13,6 @@ import client from '../../contentful';
 
 const Menu = () => {
   const [ramenItems, setRamenItems] = useState(null);
-  const [baoItems, setBaoItems] = useState(null);
 
   React.useEffect(() => {
     client
@@ -23,10 +22,11 @@ const Menu = () => {
       })
       .then((entries) => {
         setRamenItems(entries.items);
-        setBaoItems(entries.items);
         console.log(entries.items);
       });
   }, []);
+
+  const [baoItems, setBaoItems] = useState(null);
 
   React.useEffect(() => {
     client
@@ -36,6 +36,20 @@ const Menu = () => {
       })
       .then((entries) => {
         setBaoItems(entries.items);
+        console.log(entries.items);
+      });
+  }, []);
+
+  const [sideItems, setSideItems] = useState(null);
+
+  React.useEffect(() => {
+    client
+      .getEntries({
+        content_type: 'sideMenu',
+        order: 'sys.createdAt',
+      })
+      .then((entries) => {
+        setSideItems(entries.items);
         console.log(entries.items);
       });
   }, []);
@@ -63,6 +77,7 @@ const Menu = () => {
             })}
         </MenuContentContainer>
       </MenuContainer>
+
       <MenuContainer color='tan'>
         <SectionTitleWrapper>
           <SectionTitle>{baoItems && baoItems[0].fields.category}</SectionTitle>
@@ -76,6 +91,28 @@ const Menu = () => {
                   <MenuPrice>{baoItem.fields.price}</MenuPrice>
                   <MenuDescription>
                     {baoItem.fields.ingredients}
+                  </MenuDescription>
+                </MenuContent>
+              );
+            })}
+        </MenuContentContainer>
+      </MenuContainer>
+
+      <MenuContainer color='pink'>
+        <SectionTitleWrapper>
+          <SectionTitle>
+            {sideItems && sideItems[0].fields.category}
+          </SectionTitle>
+        </SectionTitleWrapper>
+        <MenuContentContainer>
+          {sideItems &&
+            sideItems.map((sideItem, i) => {
+              return (
+                <MenuContent key={i}>
+                  <MenuTitle>{sideItem.fields.name}</MenuTitle>
+                  <MenuPrice>{sideItem.fields.price}</MenuPrice>
+                  <MenuDescription>
+                    {sideItem.fields.ingredients}
                   </MenuDescription>
                 </MenuContent>
               );
