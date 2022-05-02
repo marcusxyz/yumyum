@@ -14,6 +14,7 @@ export const FooterContainer = styled.section`
 export const FooterContent = styled.div`
   display: flex;
   flex-direction: column;
+  flex-basis: auto;
   gap: 4rem;
   color: var(--light-tan);
 
@@ -21,7 +22,13 @@ export const FooterContent = styled.div`
     gap: 5rem;
   }
 `;
+export const Telephonewrapper = styled.div`
+  width: 100%;
+`;
 
+export const TelephoneLink = styled.a`
+  cursor: pointer;
+`;
 export const Telephone = styled.img`
   width: 70vw;
   margin: 0 auto;

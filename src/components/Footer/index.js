@@ -9,13 +9,19 @@ import {
   ContactList,
   ContactItems,
   ContactLink,
+  Telephonewrapper,
+  TelephoneLink,
 } from './styles';
 
 const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
-        <Telephone src='images/tel.svg'></Telephone>
+        <Telephonewrapper>
+          <TelephoneLink href='tel:+12345678'>
+            <Telephone src='images/tel.svg'></Telephone>
+          </TelephoneLink>
+        </Telephonewrapper>
         <DelieveryList>
           <DelieveryItems href='https://www.foodora.se/en/'>
             Foodora
