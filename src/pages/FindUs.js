@@ -3,7 +3,7 @@ import Map from '../components/Map';
 import OpeningHours from '../components/OpeningHours';
 import Footer from '../components/Footer';
 const FindUs = () => {
-  document.title = 'YUM YUM | Find Us';
+  document.title = 'Find Us | YUM YUM';
   return (
     <div>
       <Map />

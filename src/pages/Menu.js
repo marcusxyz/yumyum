@@ -4,7 +4,7 @@ import MenuItems from '../components/MenuItems';
 import Footer from '../components/Footer';
 
 const Menu = () => {
-  document.title = 'YUM YUM | Menu';
+  document.title = 'Menu | YUM YUM';
   return (
     <div>
       <TodaysMenu />
