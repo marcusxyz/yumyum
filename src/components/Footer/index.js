@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import client from '../../contentful';
 import {
   FooterContainer,
   FooterContent,
@@ -11,34 +12,69 @@ import {
   ContactLink,
   Telephonewrapper,
   TelephoneLink,
+  DelieveryWrapper,
 } from './styles';
 
 const Footer = () => {
+  const [footer, setFooter] = useState(null);
+
+  React.useEffect(() => {
+    client
+      .getEntries({
+        content_type: 'footer',
+      })
+      .then((entries) => {
+        setFooter(entries.items[0].fields);
+      });
+  }, []);
+
+  const tel = footer && footer.telephoneLink;
+  const telImg = footer && footer.telephoneSvg.fields.file.url;
+  const invertedLogo = footer && footer.logo.fields.file.url;
+  const build = footer && footer.build;
+  const credit = footer && footer.credits;
+  const authorName = footer && footer.authorName;
+  const authorLink = footer && footer.authorLink;
+
+  const [delieveries, setDelieveries] = useState(null);
+
+  React.useEffect(() => {
+    client
+      .getEntries({
+        content_type: 'footerDeliveries',
+        order: 'sys.createdAt',
+      })
+      .then((entries) => {
+        setDelieveries(entries.items);
+      });
+  }, []);
+
   return (
     <FooterContainer>
       <FooterContent>
         <Telephonewrapper>
-          <TelephoneLink href='tel:+12345678'>
-            <Telephone src='images/tel.svg'></Telephone>
+          <TelephoneLink href={tel}>
+            <Telephone src={telImg}></Telephone>
           </TelephoneLink>
         </Telephonewrapper>
-        <DelieveryList>
-          <DelieveryItems href='https://www.foodora.se/en/'>
-            Foodora
-          </DelieveryItems>
-          <DelieveryItems href='https://www.ubereats.com/se'>
-            Uber Eats
-          </DelieveryItems>
-          <DelieveryItems href='https://wolt.com/en/swe'>Wolt</DelieveryItems>
-        </DelieveryList>
-        <Logo src='images/logo-inverted.svg' />
+        <DelieveryWrapper>
+          {delieveries &&
+            delieveries.map((delievery, i) => {
+              return (
+                <DelieveryList key={i}>
+                  <DelieveryItems href={delievery.fields.delieveryWebsite}>
+                    {delievery.fields.delieveryTitle}
+                  </DelieveryItems>
+                </DelieveryList>
+              );
+            })}
+        </DelieveryWrapper>
+        <Logo src={invertedLogo} />
         <ContactList>
-          <ContactItems>Built with React + Contentful</ContactItems>
+          <ContactItems>{build}</ContactItems>
           <ContactItems>
-            Design & development by{' '}
-            <ContactLink href='https://marcushagerstrand.com/'>
-              Marcus
-            </ContactLink>
+            {credit}
+            <ContactLink href={authorLink}>{authorName}</ContactLink>
           </ContactItems>
         </ContactList>
       </FooterContent>

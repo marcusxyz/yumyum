@@ -23,7 +23,6 @@ const TodaysMenu = () => {
       })
       .then((entries) => {
         setLunchItems(entries.items);
-        console.log(entries.items);
       });
   }, []);
 

@@ -38,13 +38,13 @@ export const Telephone = styled.img`
   }
 `;
 
-export const DelieveryList = styled.ul`
+export const DelieveryWrapper = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0;
-  gap: 1rem;
+  gap: 2rem;
 
   @media ${device.tablet} {
     flex-direction: row;
@@ -52,6 +52,8 @@ export const DelieveryList = styled.ul`
     gap: 3rem;
   }
 `;
+
+export const DelieveryList = styled.li``;
 
 export const DelieveryItems = styled.a`
   font-size: var(--h4);
