@@ -24,12 +24,13 @@ Assignment requirements:
 ## What I've learned so far
 
 - Contentful was super easy to set up with React, I was amazed by how simple it was to get a Headless CMS up and running. The learning curve isn't too steep
-- Styling with Styled Components. Sceptical at first, but I really enjoyed working with it and makes it easy to manage my CSS with every bit of styling tied to a specific component
-- Using environment variables keep my API keys secret, safe & secure
+- Styling with Styled Components. Sceptical at first, but I really enjoyed working with it and it's easy to manage the CSS with every bit of styling tied to a specific component
+- Using environment variables to keep my API keys secret, safe & secure
 - How to use `useEffect` Hook to fetch data and `useState` Hook to save the results
 - How to use array map() to loop through contents from Contentful
 - React-router-dom. Learned to wrap `index.js` with `<BrowserRouter>` for routes to work properly
 - How to implement a interactive google map with custom map styling
+- How to properly deploy to netlify by adding environment variables in their deploy settings
 
 
 ## License
