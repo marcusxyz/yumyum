@@ -3,7 +3,11 @@ import { device } from '../MediaQueries';
 
 export const NavStyled = styled.div`
   background-color: var(--light-tan);
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem 1rem;
+
+  @media ${device.tablet} {
+    padding: 1.5rem 2.5rem;
+  }
 `;
 
 export const NavContent = styled.div`
@@ -16,11 +20,12 @@ export const NavContent = styled.div`
 export const NavLogo = styled.div``;
 
 export const NavLinks = styled.div`
-  display: none;
+  /* display: none; */
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
 
   @media ${device.tablet} {
-    display: flex;
-    flex-direction: row;
     gap: 3rem;
   }
 `;
