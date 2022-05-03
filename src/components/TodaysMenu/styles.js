@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from '@gatsbyjs/reach-router';
 import { device } from '../MediaQueries';
 
 export const LunchContainer = styled.section`
@@ -81,21 +80,5 @@ export const LunchDescription = styled.p`
 
   @media ${device.tablet} {
     padding: 0 4rem;
-  }
-`;
-
-export const MenuButtonContainer = styled.div`
-  width: 100%;
-`;
-
-export const MenuButton = styled(Link)`
-  display: inline;
-  font-size: var(--h3);
-  padding-bottom: 0.25rem;
-  border-bottom: 0.25rem dashed var(--red);
-  transition: 0.2s;
-
-  &:hover {
-    border-bottom: 0.25rem solid var(--red);
   }
 `;

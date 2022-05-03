@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   AboutContainer,
   AboutImage,
@@ -23,10 +22,6 @@ const AboutUs = (props) => {
       </AboutTextWrapper>
     </AboutContainer>
   );
-};
-
-AboutUs.propTypes = {
-  image: PropTypes.string,
 };
 
 AboutUs.defaultProps = {
