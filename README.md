@@ -1,3 +1,5 @@
+<img src="https://i.pinimg.com/originals/e9/e5/7a/e9e57a3e1b74b08abcc681833b651aa9.gif" width="100%">
+
 # YUM YUM | Ramen bar
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/da238cbf-9aa8-4b5d-8748-041cb9a02f16/deploy-status)](https://app.netlify.com/sites/yumyumm/deploys)
