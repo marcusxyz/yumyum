@@ -21,7 +21,6 @@ const MarqueeScroller = () => {
       })
       .then((entries) => {
         setMarquee(entries.items[0].fields);
-        console.log(entries.items[0].fields);
       });
   }, []);
 

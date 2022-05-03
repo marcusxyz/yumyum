@@ -13,7 +13,6 @@ const Hero = () => {
       })
       .then((entries) => {
         setIndexHero(entries.items[0].fields);
-        console.log(entries.items[0].fields);
       });
   }, []);
 

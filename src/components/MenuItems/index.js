@@ -22,7 +22,6 @@ const Menu = () => {
       })
       .then((entries) => {
         setRamenItems(entries.items);
-        console.log(entries.items);
       });
   }, []);
 
@@ -36,7 +35,6 @@ const Menu = () => {
       })
       .then((entries) => {
         setBaoItems(entries.items);
-        console.log(entries.items);
       });
   }, []);
 
@@ -50,7 +48,6 @@ const Menu = () => {
       })
       .then((entries) => {
         setSideItems(entries.items);
-        console.log(entries.items);
       });
   }, []);
 
