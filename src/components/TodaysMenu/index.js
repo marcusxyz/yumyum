@@ -23,14 +23,18 @@ const TodaysMenu = () => {
       })
       .then((entries) => {
         setLunchItems(entries.items);
+        console.log(entries.items);
       });
   }, []);
+
+  const sectionTitle = lunchItems && lunchItems[0].fields.sectionTitle;
+  const lunchHours = lunchItems && lunchItems[0].fields.lunchHours;
 
   return (
     <LunchContainer>
       <SectionTitleWrapper>
-        <SectionTitle>Todays Lunch</SectionTitle>
-        <SectionSubtitle>11:30 – 13:00</SectionSubtitle>
+        <SectionTitle>{sectionTitle}</SectionTitle>
+        <SectionSubtitle>{lunchHours}</SectionSubtitle>
       </SectionTitleWrapper>
       <LunchContentContainer>
         {lunchItems &&
